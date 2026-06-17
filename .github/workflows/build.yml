@@ -16,7 +16,7 @@ jobs:
           cd AutoKeys
           chmod +x gradlew
           ./gradlew assembleDebug
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: AutoKeys-APK
           path: AutoKeys/app/build/outputs/apk/debug/app-debug.apk
