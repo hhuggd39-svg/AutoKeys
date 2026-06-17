@@ -10,12 +10,15 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Unzip project
-        run: unzip AutoKeys.zip
+        run: |
+          unzip AutoKeys.zip
+          ls -la
+          find . -name "gradlew" 2>/dev/null
       - name: Build APK
         run: |
           cd AutoKeys
-          chmod +x gradlew
-          ./gradlew assembleDebug
+          ls -la
+          gradle assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: AutoKeys-APK
